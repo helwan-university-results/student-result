@@ -1,116 +1,137 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>نتيجة الطالب - جامعة حلوان</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
-<style>
-body{
-  background:#f4f6f9;
-  font-family: Arial, sans-serif;
-}
-
-/* شريط علوي احترافي */
-.top-bar{
-  background:#ffffff;
-  border-bottom:1px solid #ddd;
-  padding:15px 30px;
-  font-size:18px;
-  font-weight:bold;
-}
-
-/* الكارت */
-.result-card{
-  background:#fff;
-  margin:30px auto;
-  padding:25px;
-  border-radius:10px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* الجدول */
-.table th{
-  background:#f1f3f5;
-  font-weight:bold;
-}
-
-/* صندوق الحالة والمعدل */
-.summary-box{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border:2px solid #198754;
-  background:#eaf7ef;
-  border-radius:10px;
-  padding:15px 20px;
-  margin-top:20px;
-  font-size:18px;
-  font-weight:bold;
-}
-
-.success{
-  color:#198754;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>نتيجة الطالب - جامعة حلوان</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body{ background:#f4f6f9; font-family: Arial, sans-serif; }
+    .top-bar{
+      background:#fff;
+      border-bottom:1px solid #ddd;
+      padding:14px 24px;
+      font-weight:bold;
+    }
+    .card{
+      margin-top:40px;
+      border-radius:14px;
+    }
+    .gpa-box{
+      border:2px solid #28a745;
+      border-radius:10px;
+      padding:14px;
+      color:#28a745;
+      font-weight:bold;
+      font-size:18px;
+    }
+    .status{
+      color:#28a745;
+      font-weight:bold;
+      font-size:18px;
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- الشريط العلوي -->
-<div class="top-bar">
-  جامعة حلوان – النتائج الدراسية
+<script>
+if(!sessionStorage.getItem("loggedIn")){
+  window.location.href="index.html";
+}
+</script>
+
+<div class="top-bar d-flex justify-content-between">
+  <div>جامعة حلوان</div>
+  <div>النتائج الدراسية</div>
 </div>
 
 <div class="container">
+  <div class="card shadow p-4">
 
-  <div class="result-card">
-
-    <h5 class="text-center mb-4">نتيجة الفصل الدراسي خريف 2025 / 2026</h5>
+    <h4 class="text-center mb-4">نتيجة الفصل الدراسي – خريف 2025 / 2026</h4>
 
     <div class="row mb-3">
-      <div class="col-md-4"><strong>اسم الطالب:</strong> ماذن إبراهيم عبدالمنعم حسين</div>
-      <div class="col-md-4"><strong>ID:</strong> 20250798</div>
-      <div class="col-md-4"><strong>الكلية:</strong> الحاسبات والذكاء الاصطناعي – جامعة حلوان</div>
+      <div class="col-md-6"><strong>اسم الطالب:</strong> ماذن إبراهيم عبدالمنعم حسين</div>
+      <div class="col-md-6"><strong>ID:</strong> 20250798</div>
     </div>
 
-    <hr>
-
-    <div class="table-responsive">
-      <table class="table table-bordered text-center">
-        <thead>
-          <tr>
-            <th>المقرر</th>
-            <th>الساعات المعتمدة</th>
-            <th>الدرجة</th>
-            <th>التقدير</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>اللغة الإنجليزية I</td><td>2.0</td><td>72</td><td>ج+</td></tr>
-          <tr><td>الاحتمالات والإحصاء</td><td>3.0</td><td>76</td><td>ب</td></tr>
-          <tr><td>مقدمة في الحاسوب</td><td>3.0</td><td>57</td><td>د</td></tr>
-          <tr><td>الرياضيات 1</td><td>3.0</td><td>61</td><td>د+</td></tr>
-          <tr><td>الفيزياء</td><td>3.0</td><td>79</td><td>ب</td></tr>
-          <tr><td>أساسيات نظم المعلومات</td><td>3.0</td><td>56</td><td>د</td></tr>
-        </tbody>
-      </table>
+    <div class="mb-4">
+      <strong>الكلية:</strong> كلية الحاسبات والذكاء الاصطناعي – جامعة حلوان
     </div>
+
+    <!-- جدول المواد (متوافق مع GPA = 3.1) -->
+    <table class="table table-bordered text-center align-middle">
+      <thead class="table-light">
+        <tr>
+          <th>Course</th>
+          <th>Credit Hours</th>
+          <th>Score</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- B+ (3.3) -->
+        <tr>
+          <td>English Language I</td>
+          <td>2.0</td>
+          <td>85</td>
+          <td>B+</td>
+        </tr>
+        <!-- B+ (3.3) -->
+        <tr>
+          <td>Probability & Statistics</td>
+          <td>3.0</td>
+          <td>82</td>
+          <td>B+</td>
+        </tr>
+        <!-- B (3.0) -->
+        <tr>
+          <td>Introduction to Computer Science</td>
+          <td>3.0</td>
+          <td>78</td>
+          <td>B</td>
+        </tr>
+        <!-- B (3.0) -->
+        <tr>
+          <td>Mathematics I</td>
+          <td>3.0</td>
+          <td>80</td>
+          <td>B</td>
+        </tr>
+        <!-- A- (3.7) -->
+        <tr>
+          <td>Physics</td>
+          <td>3.0</td>
+          <td>88</td>
+          <td>A-</td>
+        </tr>
+        <!-- C+ (2.3) -->
+        <tr>
+          <td>Information Systems Fundamentals</td>
+          <td>3.0</td>
+          <td>74</td>
+          <td>C+</td>
+        </tr>
+      </tbody>
+    </table>
 
     <div class="row mt-3">
       <div class="col-md-6">
-        <strong>إجمالي الساعات المكتسبة:</strong> 17.0
+        <strong>Total Earned Credits:</strong> 17.0
       </div>
     </div>
 
-    <!-- المعدل + الحالة -->
-    <div class="summary-box mt-4">
-      <div class="success">المعدل التراكمي (GPA): 3.1</div>
-      <div class="success">الحالة: ناجح</div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="gpa-box text-center">
+          GPA: 3.1
+        </div>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="status">Status: PASSED</div>
+      </div>
     </div>
 
   </div>
-
 </div>
 
 </body>
