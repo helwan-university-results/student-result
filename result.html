@@ -2,66 +2,102 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>نتيجة الطالب</title>
+<title>نتيجة الطالب - جامعة حلوان</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
 <style>
 body{
-  background:#f2f4f7;
+  background:#f4f6f9;
   font-family: Arial, sans-serif;
 }
+
+/* الهيدر */
 .header{
+  background:#0d6efd;
+  color:#fff;
+  padding:15px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin-top:20px;
 }
+
 .header img{
-  height:60px;
+  height:55px;
 }
-.card{ margin-top:20px; }
+
+.header h4{
+  margin:0;
+}
+
+/* كارت النتيجة */
+.result-card{
+  background:#fff;
+  margin-top:30px;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.table th{
+  background:#f1f1f1;
+}
+
+.gpa-box{
+  background:#e9f5ff;
+  border:2px solid #0d6efd;
+  border-radius:8px;
+  padding:15px;
+  font-size:18px;
+  font-weight:bold;
+}
 </style>
 </head>
+
 <body>
+
+<!-- الهيدر -->
+<div class="header">
+  <h4>جامعة حلوان</h4>
+  <img src="helwan.jpg" alt="جامعة حلوان">
+</div>
 
 <div class="container">
 
-  <div class="header">
-    <h5>جامعة حلوان</h5>
-    <img src="https://upload.wikimedia.org/wikipedia/ar/4/4a/Helwan_University_logo.png" alt="Helwan University Logo">
-  </div>
+  <div class="result-card">
 
-  <h3 class="text-center mt-3">ماذن إبراهيم عبدالمنعم حسين</h3>
-  <p class="text-center">ID: 20250798</p>
-  <p class="text-center"><strong>الكلية:</strong> جامعة حلوان</p>
+    <h5 class="text-center mb-4">النتائج الدراسية – الفصل الدراسي</h5>
 
-  <div class="card p-3 shadow">
-    <h5 class="mb-3">خريف 2025-2026</h5>
+    <p><strong>اسم الطالب:</strong> ماذن إبراهيم عبدالمنعم حسين</p>
+    <p><strong>ID:</strong> 20250798</p>
+    <p><strong>الكلية:</strong> الحاسبات والذكاء الاصطناعي – جامعة حلوان</p>
 
-    <table class="table table-bordered text-center align-middle">
-      <thead class="table-light">
-        <tr>
-          <th>الشفرة</th>
-          <th>المقرر</th>
-          <th>ساعات</th>
-          <th>الدرجة</th>
-          <th>التقدير</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>HU 111</td><td>اللغة الإنجليزية I</td><td>2.0</td><td>85</td><td>ب+</td></tr>
-        <tr><td>ST 121</td><td>الاحتمالات والإحصاء</td><td>3.0</td><td>88</td><td>ب+</td></tr>
-        <tr><td>CS 111</td><td>مقدمة في الحاسوب</td><td>3.0</td><td>90</td><td>أ-</td></tr>
-        <tr><td>MA 111</td><td>الرياضيات - 1</td><td>3.0</td><td>86</td><td>ب+</td></tr>
-        <tr><td>PH 111</td><td>الفيزياء</td><td>3.0</td><td>89</td><td>ب+</td></tr>
-        <tr><td>IS 231</td><td>أساسيات نظم المعلومات</td><td>3.0</td><td>91</td><td>أ-</td></tr>
-      </tbody>
-    </table>
+    <hr>
 
-    <div class="mt-3">
-      <p><strong>إجمالي الساعات المكتسبة:</strong> 17.0</p>
-      <p><strong>المعدل التراكمي (GPA):</strong> 3.1</p>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>المقرر</th>
+            <th>الساعات</th>
+            <th>الدرجة</th>
+            <th>التقدير</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>اللغة الإنجليزية</td><td>2</td><td>78</td><td>B</td></tr>
+          <tr><td>الرياضيات</td><td>3</td><td>85</td><td>A</td></tr>
+          <tr><td>مقدمة في الحاسوب</td><td>3</td><td>80</td><td>B+</td></tr>
+          <tr><td>أساسيات نظم المعلومات</td><td>3</td><td>75</td><td>B</td></tr>
+        </tbody>
+      </table>
     </div>
+
+    <div class="gpa-box text-center mt-4">
+      المعدل التراكمي (GPA): <span class="text-primary">3.1</span>
+    </div>
+
   </div>
+
 </div>
 
 </body>
