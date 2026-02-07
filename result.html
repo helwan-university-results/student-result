@@ -2,67 +2,29 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>نتيجة الطالب - جامعة حلوان</title>
+<title>Student Result</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <style>
-body{ background:#f4f6f9; font-family: Arial, sans-serif; }
-
-/* شريط علوي بسيط */
-.top-bar{
-  background:#ffffff;
-  border-bottom:1px solid #ddd;
-  padding:14px 24px;
-  font-weight:bold;
-}
-
-/* الكارت */
-.card{
-  margin-top:40px;
-  border-radius:14px;
-}
-
-/* GPA والحالة */
-.gpa-box{
-  border:2px solid #28a745;
-  border-radius:10px;
-  padding:14px;
-  color:#28a745;
-  font-weight:bold;
-  font-size:18px;
-}
-.status{
-  color:#28a745;
-  font-weight:bold;
-  font-size:18px;
-}
-
-/* Appeals (كلمة صغيرة ومخفية بصريًا) */
-.appeals-link{
-  margin-top:18px;
-  font-size:12px;
-  color:#999;
-  cursor:pointer;
-  user-select:none;
-}
-.appeals-link:hover{
-  color:#666;
-  text-decoration:underline;
-}
-
-/* صندوق خطاب التظلم */
-.appeal-box{
-  margin-top:16px;
-  border:1px solid #ccc;
-  border-radius:10px;
-  padding:20px;
-  background:#ffffff;
-  display:none;
-}
-.appeal-box h6{
-  font-weight:bold;
-  margin-bottom:12px;
-}
+  body{ background:#f4f6f9; font-family: Arial, sans-serif; }
+  .top-bar{
+    background:#fff; border-bottom:1px solid #ddd;
+    padding:14px 24px; font-weight:bold;
+  }
+  .card{ margin-top:40px; border-radius:14px; }
+  .gpa-box{
+    border:2px solid #28a745; border-radius:10px;
+    padding:14px; color:#28a745; font-weight:bold; font-size:18px;
+  }
+  .status{ color:#28a745; font-weight:bold; font-size:18px; }
+  .appeals-link{
+    margin-top:18px; font-size:12px; color:#999; cursor:pointer; user-select:none;
+  }
+  .appeals-link:hover{ color:#666; text-decoration:underline; }
+  .appeal-box{
+    margin-top:16px; border:1px solid #ccc; border-radius:10px;
+    padding:20px; background:#fff; display:none;
+  }
+  .appeal-box h6{ font-weight:bold; margin-bottom:12px; }
 </style>
 </head>
 
@@ -97,7 +59,7 @@ function toggleAppeal(){
       <strong>الكلية:</strong> كلية الحاسبات والذكاء الاصطناعي – جامعة حلوان
     </div>
 
-    <!-- جدول المواد -->
+    <!-- جدول المواد (GPA = 3.1 بدون A+/A-) -->
     <table class="table table-bordered text-center align-middle">
       <thead class="table-light">
         <tr>
@@ -108,11 +70,17 @@ function toggleAppeal(){
         </tr>
       </thead>
       <tbody>
+        <!-- B+ -->
         <tr><td>English Language I</td><td>2.0</td><td>85</td><td>B+</td></tr>
-        <tr><td>Probability & Statistics</td><td>3.0</td><td>82</td><td>B+</td></tr>
+        <!-- B+ -->
+        <tr><td>Probability & Statistics</td><td>3.0</td><td>83</td><td>B+</td></tr>
+        <!-- B+ -->
+        <tr><td>Physics</td><td>3.0</td><td>82</td><td>B+</td></tr>
+        <!-- B -->
         <tr><td>Introduction to Computer Science</td><td>3.0</td><td>78</td><td>B</td></tr>
+        <!-- B -->
         <tr><td>Mathematics I</td><td>3.0</td><td>80</td><td>B</td></tr>
-        <tr><td>Physics</td><td>3.0</td><td>88</td><td>A-</td></tr>
+        <!-- C+ -->
         <tr><td>Information Systems Fundamentals</td><td>3.0</td><td>74</td><td>C+</td></tr>
       </tbody>
     </table>
@@ -133,9 +101,7 @@ function toggleAppeal(){
     </div>
 
     <!-- Appeals (كلمة صغيرة) -->
-    <div class="appeals-link" onclick="toggleAppeal()">
-      Appeals
-    </div>
+    <div class="appeals-link" onclick="toggleAppeal()">Appeals</div>
 
     <!-- خطاب التظلم -->
     <div id="appealBox" class="appeal-box">
